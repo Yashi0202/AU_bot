@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuber AI Chatbot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN / SIGNUP MODAL -->
+<div id="authModal" class="modal">
+  <div class="modal-content auth-content">
+    <span class="close">&times;</span>
+    
+    <!-- Auth Mode Toggle -->
+    <div class="auth-toggle">
+      <button id="loginToggle" class="auth-toggle-btn active">Login</button>
+      <button id="signupToggle" class="auth-toggle-btn">Sign Up</button>
+    </div>
+    
+    <h2 id="authTitle">Login</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <div class="password-row">
+      <input type="text" id="name" placeholder="Name (for signup)" style="display:none;">
+      <label class="show-password">
+        <input type="checkbox" id="showPassword">
+        <span>Show</span>
+      </label>
+    </div>
+    <button id="authBtn">Login</button>
+    <p id="toggleAuth">Don't have an account? <span id="switchAuth">Create Account</span></p>
+    <p id="authError" style="color:red;"></p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+  <div class="user-info">
+    <span id="userName"></span> | Gold Wallet: <span id="goldWallet">0</span> g
+    <button id="buyGoldBtn" class="pill-btn primary">Buy Gold</button>
+    <button id="refreshBtn" class="pill-btn">Refresh</button>
+  </div>
+
+  <!-- Chatbot -->
+  <div id="chat-container">
+    <div id="chat-box"></div>
+    
+    <!-- Suggestion Chips -->
+    <div id="suggestion-chips" class="suggestion-chips">
+      <button class="chip" data-action="help">💡 Help</button>
+      <button class="chip" data-action="buy-gold">💰 Buy Gold</button>
+      <button class="chip" data-action="investment-tips">📈 Investment Tips</button>
+      <button class="chip" data-action="gold-info">🪙 Gold Info</button>
+    </div>
+    
+    <div class="chat-input-container">
+      <input type="text" id="userInput" placeholder="Type your message...">
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- PURCHASE MODAL -->
+<div id="purchaseModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>💎 Purchase Digital Gold</h3>
+    <div class="purchase-row">
+      <input type="number" id="goldAmount" min="1" placeholder="Enter amount in ₹">
+      <span class="rupee-symbol">₹</span>
+    </div>
+    <button id="purchaseBtn">Purchase</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
